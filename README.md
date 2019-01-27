@@ -69,3 +69,4 @@ where j is the position (pixel) and i is the filter. The formula for the Gram ma
 
 Code:
 
+https://drive.google.com/open?id=19W1eb63i0TNIMbCGJKjKkT4hHHLMT6lC

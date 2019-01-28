@@ -1,15 +1,13 @@
  
 # Artistic Style Transfer using Neural Networks
 
-An extraordinary paper was published in August 2015 titled A Neural Algorithm of Artistic Style. 
+A paper was published in August 2015 titled A Neural Algorithm of Artistic Style. 
 It showed how a convolutional neural network (CNN) can be used to "paint" a picture that 
-combines the "content" of one image with the "style" of another.
+combines the "content" of one image with the "style" of another. This project is a review of that case study.
 
 # Using a pre-trained model
 
-To start, we're going to need a CNN. We could build our own, but it's much easier to use something off-the-shelf. Gatys et al. used the pre-trained VGG19 model, and we will too.
-
-VGG19 is a deep convolutional neural network built at the University of Oxford (see the paper: V
+VGG19 is a pre-trained deep convolutional neural network built at the University of Oxford (see the paper: V
 y Deep Convolutional Networks for Large-Scale Image Recognition). 
 
 It has been trained on the ImageNet dataset:
@@ -32,6 +30,7 @@ image until it has layer 5_2 outputs similar to the content image. Here's the pr
 
 Run the content image p through the model to get the activation output of convolution layer 5_2. Let's term that output P5_2.
 Run the (initially random) target image x through the model to get the output of the same layer 5_2. Let's term that output F5_2
+
 Calculate the error ("content cost") between the two outputs. We can use simple squared error cost function: ∑(P5_2−F5_2)2.
 Tweak the target image a little to reduce the error. We back-propagate the error through the model back to the target image, and use that as the basis of our tweaking.
 Repeat steps 2-4 until satisfied. A process of gradient descent

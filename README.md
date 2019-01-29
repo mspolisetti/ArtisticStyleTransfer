@@ -2,6 +2,8 @@
 
 This project is review of a paper published in August 2015 titled A Neural Algorithm of Artistic Style. It showed how a convolutional neural network (CNN) can be used to "paint" a picture that combines the "content" of one image with the "style" of another.
 
+Neural style transfer is an optimization technique used to take three images, a content image, a style reference image (such as an artwork by a famous painter), and the input image you want to style — and blend them together such that the input image is transformed to look like the content image, but “painted” in the style of the style image.
+
 ### Methods and Tools:
 
 VGG19 is a pre-trained deep convolutional neural network. It has been trained on the ImageNet dataset: 14-million images from 1,000 categories. VGG19's primary purpose is to identify objects in images.

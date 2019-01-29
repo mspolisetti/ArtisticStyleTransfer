@@ -29,3 +29,16 @@ Instead of using just one convolution layer we used a blend of layers 1_1, 2_1, 
 First, understand the purpose of the Gram matrix. Gatys et al. say, "We built a style representation that computes the correlations between the different filter responses." They key word here is correlations. Here's the intuition: the Gram matrix aggregates information on similarities across the image and this makes it blind to local, specific objects. In this fashion, it captures stylistic aspects of the image.
 
 Now the mathematics. Start by recalling that a convolution layer applies a set of filters over the image, and the output of the layer will itself be a three-dimensional matrix. Let's notate the activation output of a layer as Fij, where j is the position (pixel) and i is the filter. The formula for the Gram matrix is then ∑kFikFjk.
+Putting it together: 
+To paint both style and content, we followed a similar process of iterative tweaking but employing a joint cost function that contains both content and style loss:
+total cost = content cost + style cost 
+ 
+We used  L-BFGS optimisation algorithm.
+
+#### The important parameters are:
+
+1. Style weight: This allows you to adjust the relative strength of style vs. content. 
+2. Which layers are used for style and content loss
+3. Initialisation noise: the initial "canvas" is usually some mix of noise and the content image.
+4. Number of learning iterations.
+
